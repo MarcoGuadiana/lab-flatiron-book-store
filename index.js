@@ -44,4 +44,58 @@ const bookStore = {
 }
 
 // Write your code here!
+//This is updating the heade
+const bookStoreTitle = document.querySelector('#title');
+bookStoreTitle.textContent = bookStore.name;
+
+
+// To create new elements 
+const bookList = document.querySelector('#book-list');
+
+bookStore.books.forEach((book)=> {
+    const bookContainer = document.createElement("li");
+
+    //Book title
+    const bookTitle = document.createElement("h3");
+    bookTitle.textContent = book.title; 
+
+    //book author
+    const bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author; 
+
+    //book image
+    const bookImage = document.createElement("img");
+    bookImage.src = book.imageUrl;
+    bookImage.alt = 'Cover of ${book.title}';
+
+    //add all to bookContainer
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
+
+    //Add bookContainer to the list
+    bookList.appendChild(bookContainer); 
+
+});
+
+const deleteThis = document.querySelector('#delete-this');
+if(deletethis) {
+    deleteThis.remove(); 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
